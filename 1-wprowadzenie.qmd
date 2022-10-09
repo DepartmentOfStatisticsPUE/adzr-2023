@@ -1,0 +1,64 @@
+---
+title: "Wprowadzenie do R"
+author: "Maciej"
+format: html
+editor: visual
+---
+
+## Praca z Quarto
+
+Notatnik Quarto pozwala na tworzenie dokumentów, które zawierają kody R
+oraz wyniki analiz. Możemy w tym notatniku wstawiać wzory, wykresy,
+rysunki oraz odwoływać się do nich poprzez linki.
+
+Notatnik dotyczy przedmiotu [Analiza danych z
+R](https://www.e-sylabus.ue.poznan.pl/pl/preview/pdf/35ec91c5-5190-4a32-a66c-0fbef1d992f6 "Sylabus").
+
+-   punkt pierwszy
+
+    -   punkt 2
+
+-   punkt drugi
+
+Wstawiamy wzór na średnią
+
+$$
+\bar{x} = \sum_{i=1}^n x_i / n
+$$
+
+## Wczytanie danych na zajęcia
+
+Rozszerzanie możliwości języka R odbywa się przez pakiety. Pakiety to
+zbiór funkcji, które wykonują określone działanie.
+
+Aby dodać pakiet należy użyć funkcji `install.packages(<pakiet>)`,
+natomiast uruchomienie funkcjonlaności pakietu wykonuje funkcja
+`library(<pakiet>)`.
+
+::: callout-tip
+Wszystkie pakiety powinny być załadowane na samym początku.
+:::
+
+```{r}
+library(readxl)
+```
+
+Wczytujemy plik MS Excel zawierający dane na potrzeby zajęć. Wstawiamy
+fragment kodu używając skrótu **ctrl+alt+i**.
+
+-   skrót na symbol `<-` -- alt + -
+
+-   symbol `<-` oznacza przypisanie wyniku funkcji do obiektu
+    (`y <- f(x)`)
+
+-   funkcja `read_excel` pochodzi z pakietu `readxl`
+
+-   ściezki do pliku podajemy w cudzysłowiach lub apostrofach (**warto
+    użyć tabulatora do uzupełnienia ścieżki**)
+
+-   funkcja `head` pokazuje pierwsze 6 wierszy
+
+```{r}
+dane <- read_excel("data-raw/rent-poznan.xlsx")
+head(dane) 
+```

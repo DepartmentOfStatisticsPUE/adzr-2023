@@ -14,3 +14,13 @@ Plan zajęć:
 8.  Przetwarzanie daty i czasu za pomocą pakietu lubridate
 9.  Struktury danych i programowanie w R
 10. Raportowanie wyników z wykorzystaniem R Markdown/R Notebook
+
+
+# Projekt na zajęcia z Analizy danych w R
+
+Projekt zawiera następujące foldery:
+
+-   `data-raw` - folder z danymi surowymi (NIE TYKAĆ!!!)
+-   `data` - folder z danymi wynikowymi
+-   `figs` - folder z wykresami
+

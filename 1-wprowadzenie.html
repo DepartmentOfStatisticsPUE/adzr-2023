@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Maciej">
+
+<title>Wprowadzenie do R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="1-wprowadzenie_files/libs/clipboard/clipboard.min.js"></script>
+<script src="1-wprowadzenie_files/libs/quarto-html/quarto.js"></script>
+<script src="1-wprowadzenie_files/libs/quarto-html/popper.min.js"></script>
+<script src="1-wprowadzenie_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="1-wprowadzenie_files/libs/quarto-html/anchor.min.js"></script>
+<link href="1-wprowadzenie_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="1-wprowadzenie_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="1-wprowadzenie_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="1-wprowadzenie_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="1-wprowadzenie_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Wprowadzenie do R</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Maciej </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="praca-z-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="praca-z-quarto">Praca z Quarto</h2>
+<p>Notatnik Quarto pozwala na tworzenie dokumentów, które zawierają kody R oraz wyniki analiz. Możemy w tym notatniku wstawiać wzory, wykresy, rysunki oraz odwoływać się do nich poprzez linki.</p>
+<p>Notatnik dotyczy przedmiotu <a href="https://www.e-sylabus.ue.poznan.pl/pl/preview/pdf/35ec91c5-5190-4a32-a66c-0fbef1d992f6" title="Sylabus">Analiza danych z R</a>.</p>
+<ul>
+<li><p>punkt pierwszy</p>
+<ul>
+<li>punkt 2</li>
+</ul></li>
+<li><p>punkt drugi</p></li>
+</ul>
+<p>Wstawiamy wzór na średnią</p>
+<p><span class="math display">\[
+\bar{x} = \sum_{i=1}^n x_i / n
+\]</span></p>
+</section>
+<section id="wczytanie-danych-na-zajęcia" class="level2">
+<h2 class="anchored" data-anchor-id="wczytanie-danych-na-zajęcia">Wczytanie danych na zajęcia</h2>
+<p>Rozszerzanie możliwości języka R odbywa się przez pakiety. Pakiety to zbiór funkcji, które wykonują określone działanie.</p>
+<p>Aby dodać pakiet należy użyć funkcji <code>install.packages(&lt;pakiet&gt;)</code>, natomiast uruchomienie funkcjonlaności pakietu wykonuje funkcja <code>library(&lt;pakiet&gt;)</code>.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wszystkie pakiety powinny być załadowane na samym początku.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Wczytujemy plik MS Excel zawierający dane na potrzeby zajęć. Wstawiamy fragment kodu używając skrótu <strong>ctrl+alt+i</strong>.</p>
+<ul>
+<li><p>skrót na symbol <code>&lt;-</code> – alt + -</p></li>
+<li><p>symbol <code>&lt;-</code> oznacza przypisanie wyniku funkcji do obiektu (<code>y &lt;- f(x)</code>)</p></li>
+<li><p>funkcja <code>read_excel</code> pochodzi z pakietu <code>readxl</code></p></li>
+<li><p>ściezki do pliku podajemy w cudzysłowiach lub apostrofach (<strong>warto użyć tabulatora do uzupełnienia ścieżki</strong>)</p></li>
+<li><p>funkcja <code>head</code> pokazuje pierwsze 6 wierszy</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data-raw/rent-poznan.xlsx"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dane) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 51
+  id       date_activ          date_modif          date_expire         individ…¹
+  &lt;chr&gt;    &lt;dttm&gt;              &lt;dttm&gt;              &lt;dttm&gt;              &lt;lgl&gt;    
+1 19576742 2015-03-24 00:00:00 2020-09-05 00:00:00 2020-10-05 00:00:00 TRUE     
+2 20292499 2013-07-19 00:00:00 2020-08-30 00:00:00 2020-09-09 00:00:00 TRUE     
+3 25876297 2014-04-05 00:00:00 2019-09-10 00:00:00 2019-09-30 00:00:00 TRUE     
+4 30574847 2014-08-10 00:00:00 2020-03-03 00:00:00 2020-03-10 00:00:00 TRUE     
+5 30774505 2014-08-17 00:00:00 2019-11-15 00:00:00 2019-12-15 00:00:00 TRUE     
+6 31073093 2014-08-28 00:00:00 2020-07-31 00:00:00 2020-08-20 00:00:00 TRUE     
+# … with 46 more variables: price &lt;dbl&gt;, flat_area &lt;dbl&gt;, flat_rooms &lt;dbl&gt;,
+#   flat_floor_no &lt;dbl&gt;, flat_build_year &lt;dbl&gt;, flat_furnished &lt;lgl&gt;,
+#   flat_rent &lt;dbl&gt;, flat_deposit &lt;dbl&gt;, flat_price_include_rent &lt;lgl&gt;,
+#   flat_for_students &lt;lgl&gt;, flat_heating &lt;dbl&gt;, flat_status &lt;dbl&gt;,
+#   flat_windows &lt;dbl&gt;, building_floor_num &lt;dbl&gt;, building_type &lt;dbl&gt;,
+#   building_material &lt;dbl&gt;, ad_title &lt;chr&gt;, ad_seller_id &lt;chr&gt;,
+#   ad_promo &lt;lgl&gt;, flat_balcony &lt;lgl&gt;, flat_utility_room &lt;lgl&gt;, …</code></pre>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
